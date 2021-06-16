@@ -19,7 +19,7 @@ public class ForPassFragment extends Fragment {
 
     LoginCallBack loginCallBack;
     TextInputEditText un;
-    Button submit;
+    Button submit,backToLogin;
     public void setLoginCallBack(LoginCallBack loginCallBack)
     {
         this.loginCallBack = loginCallBack;
@@ -29,11 +29,22 @@ public class ForPassFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_forpass,container,false);
         submit = v.findViewById(R.id.fp_but);
         un = v.findViewById(R.id.input_username);
-
+        //set title
+        loginCallBack.setTitle("Forgot");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onClickSubmit();
+            }
+        });
+        backToLogin = v.findViewById(R.id.fp_login);
+        backToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(loginCallBack!=null)
+                {
+                    loginCallBack.pop();
+                }
             }
         });
         return v;
@@ -46,7 +57,7 @@ public class ForPassFragment extends Fragment {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Database database = new Database("http://192.168.247.153/hunt/fp.php",sField,sData);
+                Database database = new Database("http://192.168.1.37/hunt/fp.php",sField,sData);
                 if(database.onStart())
                 {
                     if(database.onComp())

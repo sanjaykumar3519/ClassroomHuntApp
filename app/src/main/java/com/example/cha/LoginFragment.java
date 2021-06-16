@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,12 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_login,container,false);
+        //set Title
+        if(loginCallBack!=null)
+        {
+            loginCallBack.setTitle("login");
+            Log.i("login","title");
+        }
 
         login = v.findViewById(R.id.login);
         signup = v.findViewById(R.id.signup);

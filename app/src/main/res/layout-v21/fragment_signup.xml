@@ -96,8 +96,8 @@
             android:layout_height="wrap_content"
             android:text="signup"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/blue_dark"
+            android:backgroundTint="@color/blue_dark"
+            android:textColor="@color/white"
             android:id="@+id/sign_but"
             android:layout_marginTop="10dp"
             android:transitionName="login_trans"
@@ -110,7 +110,7 @@
             android:text="Already have an account?login"
             android:textColor="@color/blue_dark"
             android:textSize="15sp"
-            android:id="@+id/sign_alr"
+            android:id="@+id/already"
             android:transitionName="sign_trans"/>
     </LinearLayout>
     </ScrollView>

@@ -27,9 +27,16 @@ public class ResetFragment extends Fragment {
     String[] sData;
     String password;
     Bundle bundle;
-
+    LoginCallBack loginCallBack;
+    public void setLoginCallBack(LoginCallBack loginCallBack)
+    {
+        this.loginCallBack = loginCallBack;
+    }
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View v = inflater.inflate(R.layout.fragment_reset, container, false);
+        //set title
+        loginCallBack.setTitle("reset");
+
         pass = v.findViewById(R.id.input_pass);
         cPass = v.findViewById(R.id.input_cPass);
         reset = v.findViewById(R.id.reset_but);
@@ -65,7 +72,7 @@ public class ResetFragment extends Fragment {
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override
                 public void run() {
-                    Database database = new Database("http://192.168.247.153/hunt/fp.php", sField, sData);
+                    Database database = new Database("http://192.168.1.37/hunt/fp.php", sField, sData);
                     if (database.onStart()) {
                         if (database.onComp()) {
                             String temp = database.getData();

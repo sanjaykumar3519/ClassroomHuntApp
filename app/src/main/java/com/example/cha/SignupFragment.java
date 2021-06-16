@@ -20,21 +20,30 @@ public class SignupFragment extends Fragment {
     TextInputEditText username, email, department, password, cPassword;
     String uName, eMail, dept, Pass, cPass;
     String[] sData, sField;
-    Button onSignup;
+    Button onSignup,onAlready;
+    LoginCallBack loginCallBack;
+
+    public void setLoginCallBack(LoginCallBack loginCallBack)
+    {
+        this.loginCallBack = loginCallBack;
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View v = inflater.inflate(R.layout.fragment_signup, container, false);
+
+        loginCallBack.setTitle("signUp");
         username = v.findViewById(R.id.input_un);
         email = v.findViewById(R.id.input_email);
         department = v.findViewById(R.id.input_dept);
         password = v.findViewById(R.id.input_pass);
         cPassword = v.findViewById(R.id.input_cpass);
         onSignup = v.findViewById(R.id.sign_but);
-        onClickSignup();
+        onAlready = v.findViewById(R.id.already);
+        onClickButtons();
         return v;
     }
 
-    public void onClickSignup() {
+    public void onClickButtons() {
         onSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +66,7 @@ public class SignupFragment extends Fragment {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            Database database = new Database("http://192.168.247.153/hunt/Signup.php", sField, sData);
+                            Database database = new Database("http://192.168.1.37/hunt/Signup.php", sField, sData);
                             if (database.onStart()) {
                                 if (database.onComp()) {
                                     String temp = database.getData();
@@ -74,7 +83,19 @@ public class SignupFragment extends Fragment {
                 }
             }
         });
+
+        onAlready.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(loginCallBack!=null)
+                {
+                    loginCallBack.pop();
+                }
+            }
+        });
     }
+
+
 
     public boolean checkValidations() {
         boolean validation = false;

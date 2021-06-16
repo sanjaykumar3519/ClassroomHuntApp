@@ -8,12 +8,16 @@ import android.os.Bundle;
 
 import android.util.Log;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity implements LoginCallBack{
 
     FragmentManager fragmentManager = getSupportFragmentManager();
     String userName;
     Bundle sData;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,25 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         Log.i("setData",this.userName);
     }
 
+    @Override
+    public void setTitle(String cTitle) {
+        Animation alpha;
+        alpha = AnimationUtils.loadAnimation(this,R.anim.alp);
+        title = findViewById(R.id.title_login);
+        switch(cTitle)
+        {
+            case "login":title.setText(R.string.login);title.setAnimation(alpha);break;
+            case "signUp":title.setText(R.string.signup);title.setAnimation(alpha);break;
+            case "Forgot":title.setText(R.string.forgot);title.setAnimation(alpha);break;
+            case "reset":title.setText(R.string.reset);title.setAnimation(alpha);break;
+        }
+    }
+
+    @Override
+    public void pop() {
+        getSupportFragmentManager().popBackStack();
+    }
+
     public void mainIntent()
     {
         SplashScreen.ld.edit().putBoolean("login",true).apply();
@@ -60,14 +83,17 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     {
         SignupFragment signupFragment = new SignupFragment();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_right,0,R.anim.slide_in_left,0);
         fragmentTransaction.addToBackStack("LoginActivityStack");
         fragmentTransaction.replace(R.id.login_frame,signupFragment,null);
+        signupFragment.setLoginCallBack(this);
         fragmentTransaction.commit();
     }
     public void forgotFrag()
     {
         ForPassFragment forPassFragment = new ForPassFragment();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_right,0,R.anim.slide_in_left,0);
         fragmentTransaction.addToBackStack("LoginActivityStack");
         fragmentTransaction.replace(R.id.login_frame,forPassFragment,null);
         forPassFragment.setLoginCallBack(this);
@@ -81,8 +107,10 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         ResetFragment resetFragment = new ResetFragment();
         resetFragment.setArguments(sData);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_right,0,R.anim.slide_in_left,0);
         fragmentTransaction.addToBackStack("LoginActivityStack");
         fragmentTransaction.replace(R.id.login_frame,resetFragment,null);
+        resetFragment.setLoginCallBack(this);
         fragmentTransaction.commit();
     }
 

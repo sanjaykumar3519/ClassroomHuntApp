@@ -10,28 +10,42 @@
     android:padding="15dp"
    >
     <ImageView
-        android:id="@+id/hunt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/hunt_title"
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/rework"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="42sp"
+        android:letterSpacing="0.1"
+        android:gravity="center_vertical|center_horizontal"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:textColor="@color/blue_dark"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/title_login"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/title_login"/>
 
     <TextView
         android:id="@+id/title_login"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/blue_dark"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/login_bg"
+        android:fontFamily="@font/secular_one"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/white"
         android:textSize="40sp"
-        android:fontFamily="@font/ubuntu_bold_italic"
-        android:gravity="center_vertical|center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/hunt_title"
+        app:layout_constraintBottom_toTopOf="@+id/login_frame"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/login_frame"/>
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <FrameLayout
         android:id="@+id/login_frame"

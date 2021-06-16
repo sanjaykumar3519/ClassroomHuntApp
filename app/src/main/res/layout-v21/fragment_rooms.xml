@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/oOne"
             android:textColor="@color/blue_dark"
             android:fontFamily="@font/ubuntu_bold_italic" />
 
@@ -43,7 +42,6 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/oTwo"
             android:textColor="@color/blue_dark"
             android:fontFamily="@font/ubuntu_bold_italic" />
 
@@ -53,7 +51,6 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/oThree"
             android:textColor="@color/blue_dark"
             android:fontFamily="@font/ubuntu_bold_italic" />
 
