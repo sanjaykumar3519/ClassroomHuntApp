@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Forpass"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:padding="15dp"
+    >
+
+    <ImageView
+        android:id="@+id/reset_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/rework"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:transitionName="logo_trans"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/reset_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:background="@drawable/layout_bg"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:textColor="@color/blue_dark"
+        android:gravity="center_horizontal"
+        android:transitionName="text_trans"
+        />
+    <LinearLayout
+        android:id="@+id/reset_det"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@drawable/layout_bg"
+        android:orientation="vertical"
+        android:transitionName="detail_trans"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/in_new_pass"
+                android:hint="Enter new password"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/in_new_cpass"
+                android:hint="Confirm new password"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/but_shape"
+            android:textColor="@color/blue_dark"
+            android:text="Reset"
+            android:layout_marginTop="10dp"
+            android:transitionName="reset_but_trans"
+            android:id="@+id/reset_but"/>
+    </LinearLayout>
+
+</LinearLayout>

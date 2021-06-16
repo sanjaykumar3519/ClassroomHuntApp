@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/floor_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="@dimen/b_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <Button
+            android:id="@+id/gf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/b_1"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:textColor="@color/blue_dark"
+            android:text="@string/gf"
+            android:transitionName="gf_trans"
+            />
+
+        <Button
+            android:id="@+id/ff"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/b_1"
+            android:backgroundTint="@color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:textColor="@color/blue_dark"
+            android:text="@string/ff"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/sf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/b_1"
+            android:backgroundTint="@color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:textColor="@color/blue_dark"
+            android:text="@string/sf"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/tf"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/b_1"
+            android:backgroundTint="@color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:textColor="@color/blue_dark"
+            android:text="@string/tf"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="3dp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

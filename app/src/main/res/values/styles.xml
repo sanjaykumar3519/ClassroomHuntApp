@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="red_border">
+        <item name="colorPrimary">@color/red_dark</item>
+    </style>
+
+    //red_border
+    <style name="uninstall" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/red_dark</item>
+        <item name="rippleColor">@color/red_light</item>
+    </style>
+</resources>

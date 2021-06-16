@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SplashScreen"
+    android:background="#fff"
+    android:padding="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_con"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/main_text">
+        <ImageView
+            android:id="@+id/logo_left"
+            android:layout_width="220dp"
+            android:layout_height="329dp"
+            android:src="@drawable/hunt_circle_half"
+            android:transitionName="logo_trans"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <ImageView
+            android:id="@+id/logo_right"
+            android:layout_width="220dp"
+            android:layout_height="329dp"
+            android:src="@drawable/hunt_circle_right"
+            android:transitionName="logo_trans"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <ImageView
+            android:id="@+id/logo_center"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/hunt_inside"
+            android:transitionName="logo_trans"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:text="@string/classroom_hunt_app"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:transitionName="text_trans"
+        app:layout_constraintTop_toBottomOf="@+id/img_con"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/main_slogan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:gravity="center_horizontal"
+        android:text="@string/a_class_tracking_management_system"
+        android:textSize="16sp"
+        android:transitionName="text_trans"
+        app:layout_constraintTop_toBottomOf="@+id/main_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="10dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
