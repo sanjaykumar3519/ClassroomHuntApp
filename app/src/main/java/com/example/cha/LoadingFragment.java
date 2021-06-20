@@ -76,7 +76,7 @@ public class LoadingFragment extends Fragment {
             @Override
             public void run() {
 
-                if(detection("http://192.168.1.37/hunt/Detection/Python.php", "http://192.168.1.37/hunt/Detection/000.jpg",rNum))
+                if(detection("http://192.168.244.209/hunt/Detection/Python.php", "http://192.168.244.209/hunt/Detection/000.jpg",rNum))
                 {
                     if (fragmentCallBack != null) {
                         fragmentCallBack.setResultData(result, resImg);
