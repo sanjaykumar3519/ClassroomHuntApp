@@ -110,7 +110,7 @@ public class SignupFragment extends Fragment {
             Toast.makeText(getContext(), "username Too Long", Toast.LENGTH_SHORT).show();
         } else if (!eMail.contains("@nie.ac.in")) {
             Toast.makeText(getContext(), "Invalid email", Toast.LENGTH_SHORT).show();
-        } else if (dept.length() > 4) {
+        } else if (dept.length() > 5) {
             Toast.makeText(getContext(), "Department too long", Toast.LENGTH_SHORT).show();
         } else if (!Pass.equals(cPass)) {
             Toast.makeText(getContext(), "Password mismatch", Toast.LENGTH_SHORT).show();
