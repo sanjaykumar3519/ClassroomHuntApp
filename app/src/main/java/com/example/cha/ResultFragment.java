@@ -47,7 +47,7 @@ public class ResultFragment extends Fragment {
         Bundle bundle = getArguments();
         if(bundle!=null)
         {
-            if(bundle.getString("students").equals("0"))
+            if(bundle.getString("students").equals("0") || bundle.getString("students").equals("none"))
             {
                 status.setText(R.string.empty);
                 imageView.setVisibility(View.INVISIBLE);
