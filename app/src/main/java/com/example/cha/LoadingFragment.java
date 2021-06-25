@@ -1,14 +1,10 @@
 package com.example.cha;
-
-import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +72,7 @@ public class LoadingFragment extends Fragment {
             @Override
             public void run() {
 
-                if(detection("http://192.168.244.209/hunt/Detection/Python.php", "http://192.168.244.209/hunt/Detection/000.jpg",rNum))
+                if(detection("http://192.168.1.37/hunt/Detection/Python.php", "http://192.168.1.37/hunt/Detection/000.jpeg",rNum))
                 {
                     if (fragmentCallBack != null) {
                         fragmentCallBack.setResultData(result, resImg);

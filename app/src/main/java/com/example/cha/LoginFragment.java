@@ -58,7 +58,7 @@ public class LoginFragment extends Fragment {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void run() {
-                        Database database = new Database("http://192.168.244.209/hunt/Login.php", sField, sData);
+                        Database database = new Database("http://192.168.1.37/hunt/Login.php", sField, sData);
                         if(database.onStart())
                         {
                             if(database.onComp())
