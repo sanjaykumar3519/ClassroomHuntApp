@@ -1,6 +1,7 @@
 package com.example.cha;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -19,12 +20,13 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     FragmentManager fragmentManager = getSupportFragmentManager();
     String userName;
     Bundle sData;
-    TextView title;
+    TextView title,welcome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        welcome = findViewById(R.id.welcome);
         initFrag();
 
     }
@@ -64,10 +66,26 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         title = findViewById(R.id.title_login);
         switch(cTitle)
         {
-            case "login":title.setText(R.string.login);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.login_bg));break;
-            case "signUp":title.setText(R.string.signup);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.signup_bg));break;
-            case "Forgot":title.setText(R.string.forgot);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.forgot_bg));break;
-            case "reset":title.setText(R.string.reset);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.reset_bg));break;
+            case "login":title.setText(R.string.login);
+                        title.setAnimation(alpha);
+                        title.setBackground(getDrawable(R.drawable.login_bg));
+                        welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.blue_dark));
+                        break;
+            case "signUp":title.setText(R.string.signup);
+                            title.setAnimation(alpha);
+                            title.setBackground(getDrawable(R.drawable.signup_bg));
+                            welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.yellow));
+                            break;
+            case "Forgot":title.setText(R.string.forgot);
+                            title.setAnimation(alpha);
+                            title.setBackground(getDrawable(R.drawable.forgot_bg));
+                             welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.red_dark));
+                break;
+            case "reset":title.setText(R.string.reset);
+                        title.setAnimation(alpha);
+                        title.setBackground(getDrawable(R.drawable.reset_bg));
+                        welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.green_dark));
+                break;
         }
     }
 

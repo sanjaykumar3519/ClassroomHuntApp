@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="10dp"
+        android:elevation="5dp"
         android:background="@drawable/layout_bg"
         android:orientation="vertical"
         android:transitionName="detail_trans"
@@ -23,11 +24,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/green_dark"
+            app:hintTextColor="@color/green_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textCursorDrawable="@null"
                 android:id="@+id/input_pass"
                 android:hint="Enter new password"
                 android:inputType="text"/>
@@ -35,13 +39,16 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextColor="@color/green_dark"
             app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/green_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/input_cPass"
+                android:textCursorDrawable="@null"
                 android:hint="Confirm new password"
                 android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>

@@ -13,7 +13,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red_dark">#C61515</color>
-    <color name="yellow">#ffcc00</color>
+    <color name="yellow">#FF9800</color>
     <color name="red_light">#ffb3b3</color>
     <color name="green_light">#b3ffb3</color>
     <color name="mtrl_btn_stroke_color_selector">@color/blue_dark</color>
