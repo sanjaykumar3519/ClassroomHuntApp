@@ -4,17 +4,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-
-
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginFragment extends Fragment {
@@ -34,7 +30,6 @@ public class LoginFragment extends Fragment {
         if(loginCallBack!=null)
         {
             loginCallBack.setTitle("login");
-            Log.i("login","title");
         }
 
         login = v.findViewById(R.id.login);
@@ -60,7 +55,7 @@ public class LoginFragment extends Fragment {
                         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                         @Override
                         public void run() {
-                            Database database = new Database("http://192.168.1.37/hunt/Login.php", sField, sData);
+                            Database database = new Database("http://192.168.43.209/hunt/Login.php", sField, sData);
                             if(database.onStart())
                             {
                                 if(database.onComp())

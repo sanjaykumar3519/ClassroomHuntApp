@@ -3,6 +3,8 @@ package com.example.cha;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -54,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         Log.i("setData",this.userName);
     }
 
+    @SuppressLint({"ResourceType", "UseCompatLoadingForDrawables"})
     @Override
     public void setTitle(String cTitle) {
         Animation alpha;
@@ -61,10 +64,10 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         title = findViewById(R.id.title_login);
         switch(cTitle)
         {
-            case "login":title.setText(R.string.login);title.setAnimation(alpha);break;
-            case "signUp":title.setText(R.string.signup);title.setAnimation(alpha);break;
-            case "Forgot":title.setText(R.string.forgot);title.setAnimation(alpha);break;
-            case "reset":title.setText(R.string.reset);title.setAnimation(alpha);break;
+            case "login":title.setText(R.string.login);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.login_bg));break;
+            case "signUp":title.setText(R.string.signup);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.signup_bg));break;
+            case "Forgot":title.setText(R.string.forgot);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.forgot_bg));break;
+            case "reset":title.setText(R.string.reset);title.setAnimation(alpha);title.setBackground(getDrawable(R.drawable.reset_bg));break;
         }
     }
 
