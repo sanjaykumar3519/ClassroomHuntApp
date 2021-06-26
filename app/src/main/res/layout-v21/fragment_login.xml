@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="go"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/white_border"
             android:backgroundTint="@color/blue_dark"
             android:transitionName="login_trans"
             android:id="@+id/login"/>

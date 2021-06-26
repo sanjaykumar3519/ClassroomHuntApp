@@ -54,32 +54,40 @@ public class ForPassFragment extends Fragment {
     {
         String sData = String.valueOf(un.getText());
         String sField = "check_user";
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                Database database = new Database("http://192.168.1.37/hunt/fp.php",sField,sData);
-                if(database.onStart())
-                {
-                    if(database.onComp())
+        if(!sData.isEmpty())
+        {
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    Database database = new Database("http://192.168.1.37/hunt/fp.php",sField,sData);
+                    if(database.onStart())
                     {
-                        String temp = database.getData();
-                        if(temp.equals("true"))
+                        if(database.onComp())
                         {
-                            if(loginCallBack!=null)
+                            String temp = database.getData();
+                            if(temp.equals("true"))
                             {
-                                Toast.makeText(getContext(),"username Found",Toast.LENGTH_SHORT).show();
-                                loginCallBack.setData(sData);
-                                loginCallBack.callBacks("reset");
+                                if(loginCallBack!=null)
+                                {
+                                    Toast.makeText(getContext(),"username Found",Toast.LENGTH_SHORT).show();
+                                    loginCallBack.setData(sData);
+                                    loginCallBack.callBacks("reset");
+                                }
                             }
-                        }
-                        else
-                        {
-                            Toast.makeText(getContext(),temp,Toast.LENGTH_SHORT).show();
+                            else
+                            {
+                                Toast.makeText(getContext(),temp,Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        }
+        else
+        {
+            Toast.makeText(requireContext(),"Enter username",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }

@@ -48,8 +48,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:backgroundTint="@color/blue_dark"
+            style="@style/white_border"
+            android:backgroundTint="@color/green_dark"
             android:textColor="@color/white"
             android:text="Reset"
             android:layout_marginTop="10dp"
