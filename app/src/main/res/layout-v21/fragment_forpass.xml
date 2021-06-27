@@ -46,6 +46,7 @@
             android:backgroundTint="@color/red_dark"
             android:textColor="@color/white"
             android:text="Submit"
+            android:padding="12dp"
             android:layout_marginTop="10dp"
             android:transitionName="login_trans"
             android:id="@+id/fp_but"/>
@@ -56,12 +57,24 @@
             android:background="#00000000"
             android:text="Back to login page"
             android:id="@+id/fp_login"
-            android:textColor="@color/blue_dark"
+            android:textColor="@color/red_dark"
             android:textSize="15sp"
             android:layout_marginTop="5dp"
             android:transitionName="sign_trans"
             android:elevation="0dp"/>
 
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red_dark"
+        android:background="@drawable/progress_bg"
+        android:elevation="@dimen/b_1"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/fp_det"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

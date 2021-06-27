@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -26,6 +27,7 @@ public class SignupFragment extends Fragment {
     String[] sData, sField;
     Button onSignup,onAlready;
     LoginCallBack loginCallBack;
+    ProgressBar progressBar;
 
     public void setLoginCallBack(LoginCallBack loginCallBack)
     {
@@ -43,6 +45,7 @@ public class SignupFragment extends Fragment {
         cPassword = v.findViewById(R.id.input_cpass);
         onSignup = v.findViewById(R.id.sign_but);
         onAlready = v.findViewById(R.id.already);
+        progressBar = v.findViewById(R.id.progress);
         onClickButtons();
         return v;
     }
@@ -51,6 +54,8 @@ public class SignupFragment extends Fragment {
         onSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //progress bar
+                progressBar.setVisibility(View.VISIBLE);
                 if (checkValidations()) {
                     //creating signup data's
                     sData = new String[4];
@@ -79,6 +84,7 @@ public class SignupFragment extends Fragment {
                                         getParentFragmentManager().popBackStack();
                                     } else {
                                         Toast.makeText(getContext(), temp, Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             }
@@ -110,16 +116,22 @@ public class SignupFragment extends Fragment {
         cPass = String.valueOf(cPassword.getText());
         if (uName.isEmpty() || eMail.isEmpty() || dept.isEmpty() || Pass.isEmpty() || cPass.isEmpty()) {
             Toast.makeText(getContext(), "All Fields are required", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         } else if (uName.length() > 10) {
             Toast.makeText(getContext(), "username Too Long", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         } else if (!eMail.contains("@nie.ac.in")) {
             Toast.makeText(getContext(), "Invalid email", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         } else if (dept.length() > 5) {
             Toast.makeText(getContext(), "Department too long", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         } else if (!Pass.equals(cPass)) {
             Toast.makeText(getContext(), "Password mismatch", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         } else if (Pass.length() > 10) {
             Toast.makeText(getContext(), "Password too long", Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         } else {
             validation = true;
         }

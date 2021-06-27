@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -28,12 +29,15 @@ public class ResetFragment extends Fragment {
     String password;
     Bundle bundle;
     LoginCallBack loginCallBack;
+    ProgressBar progressBar;
     public void setLoginCallBack(LoginCallBack loginCallBack)
     {
         this.loginCallBack = loginCallBack;
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View v = inflater.inflate(R.layout.fragment_reset, container, false);
+        //progress bar
+        progressBar = v.findViewById(R.id.progress);
         //set title
         loginCallBack.setTitle("reset");
 
@@ -45,6 +49,7 @@ public class ResetFragment extends Fragment {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 onClickReset();
             }
         });
@@ -92,12 +97,15 @@ public class ResetFragment extends Fragment {
         if(sData[1].isEmpty() || password.isEmpty())
         {
             Toast.makeText(getContext(),"All fields are required",Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         }else if(!sData[1].equals(password))
         {
             Toast.makeText(getContext(),"password not matching",Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         }else if(password.length()>10)
         {
             Toast.makeText(getContext(),"password too long",Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         }else{valid = true;}
         return valid;
     }

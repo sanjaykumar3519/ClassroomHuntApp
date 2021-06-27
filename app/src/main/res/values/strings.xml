@@ -8,10 +8,10 @@
     <string name="a_class_tracking_management_system">A class tracking management system</string>
     <string name="hello">hello</string>
     <string name="welcome">Welcome</string>
-    <string name="login">Login </string>
-    <string name="signup">Signup </string>
-    <string name="forgot">Forgot Password </string>
-    <string name="reset">Reset Password </string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="forgot">Forgot</string>
+    <string name="reset">Reset</string>
     <string name="dashboard_title">Dashboard</string>
     <string name="username">Username</string>
     <string name="password">Password</string>

@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -25,7 +26,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         welcome = findViewById(R.id.welcome);
         initFrag();
 
@@ -64,24 +65,25 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         Animation alpha;
         alpha = AnimationUtils.loadAnimation(this,R.anim.alp);
         title = findViewById(R.id.title_login);
+        StringBuilder t = new StringBuilder();
         switch(cTitle)
         {
-            case "login":title.setText(R.string.login);
+            case "login": title.setText(t.append(getResources().getString(R.string.login)).append(" "));
                         title.setAnimation(alpha);
                         title.setBackground(getDrawable(R.drawable.login_bg));
                         welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.blue_dark));
                         break;
-            case "signUp":title.setText(R.string.signup);
+            case "signUp":title.setText(t.append(getResources().getString(R.string.signup)).append(" "));
                             title.setAnimation(alpha);
                             title.setBackground(getDrawable(R.drawable.signup_bg));
                             welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.yellow));
                             break;
-            case "Forgot":title.setText(R.string.forgot);
+            case "Forgot":title.setText(t.append(getResources().getString(R.string.forgot)).append(" "));
                             title.setAnimation(alpha);
                             title.setBackground(getDrawable(R.drawable.forgot_bg));
                              welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.red_dark));
                 break;
-            case "reset":title.setText(R.string.reset);
+            case "reset":title.setText(t.append(getResources().getString(R.string.reset)).append(" "));
                         title.setAnimation(alpha);
                         title.setBackground(getDrawable(R.drawable.reset_bg));
                         welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.green_dark));

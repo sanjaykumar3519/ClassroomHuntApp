@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,7 @@ public class LoginFragment extends Fragment {
     TextInputEditText username,password;
     String[] sField,sData;
     LoginCallBack loginCallBack;
+    ProgressBar progressBar;
     public void setLoginCallBack(LoginCallBack loginCallBack)
     {
         this.loginCallBack = loginCallBack;
@@ -37,10 +39,14 @@ public class LoginFragment extends Fragment {
         forgot = v.findViewById(R.id.forgot);
         username = v.findViewById(R.id.un_input);
         password = v.findViewById(R.id.pass_input);
+        //progress bar
+        progressBar = v.findViewById(R.id.progress);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //progress bar
+                progressBar.setVisibility(View.VISIBLE);
                 sField = new String[2];
                 sData = new String[2];
                 sField[0] = "username";
@@ -73,6 +79,7 @@ public class LoginFragment extends Fragment {
                                     else
                                     {
                                         Toast.makeText(v.getContext(),temp,Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             }
@@ -81,6 +88,7 @@ public class LoginFragment extends Fragment {
                 }
                 else {
                     Toast.makeText(getContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });

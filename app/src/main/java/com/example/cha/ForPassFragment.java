@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,7 @@ public class ForPassFragment extends Fragment {
     LoginCallBack loginCallBack;
     TextInputEditText un;
     Button submit,backToLogin;
+    ProgressBar progressBar;
     public void setLoginCallBack(LoginCallBack loginCallBack)
     {
         this.loginCallBack = loginCallBack;
@@ -27,6 +29,8 @@ public class ForPassFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_forpass,container,false);
+        //progress bar
+        progressBar = v.findViewById(R.id.progress);
         submit = v.findViewById(R.id.fp_but);
         un = v.findViewById(R.id.input_username);
         //set title
@@ -52,6 +56,7 @@ public class ForPassFragment extends Fragment {
 
     public void onClickSubmit()
     {
+        progressBar.setVisibility(View.VISIBLE);
         String sData = String.valueOf(un.getText());
         String sField = "check_user";
         if(!sData.isEmpty())
@@ -77,6 +82,7 @@ public class ForPassFragment extends Fragment {
                             else
                             {
                                 Toast.makeText(getContext(),temp,Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
                             }
                         }
                     }
@@ -86,6 +92,7 @@ public class ForPassFragment extends Fragment {
         else
         {
             Toast.makeText(requireContext(),"Enter username",Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.GONE);
         }
 
     }
