@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -13,7 +14,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,7 +50,11 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     Rooms room;
     //setting profile data
     String[] profileData;
-
+    //hide
+    Button hide;
+    Animation alp;
+    //open mail
+    ImageView mail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +62,20 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         un = findViewById(R.id.display_un);
         activityFrame = findViewById(R.id.activity_frame);
         support = findViewById(R.id.support);
-
+        hide = findViewById(R.id.hide);
+        mail = findViewById(R.id.mail_img);
+        if(support.getVisibility() == View.GONE)
+        {
+            support.setVisibility(View.VISIBLE);
+        }
+        alp = AnimationUtils.loadAnimation(this,R.anim.alp_1s);
+        hide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                support.setAnimation(alp);
+                support.setVisibility(View.GONE);
+            }
+        });
         //shared preference
         holdUname = getSharedPreferences("username",MODE_PRIVATE);
         //set Username
@@ -69,6 +89,23 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         room = new Rooms();
         profileData = new String[3];
         iniFragment();
+
+        //onClick mail
+        mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.putExtra(Intent.EXTRA_EMAIL,"clashofsanjay@gmail.com");
+                i.setType("message/rfc822");
+                startActivity(Intent.createChooser(i,"Open using"));
+                }
+                catch(Exception e)
+                {
+                    Toast.makeText(getApplicationContext(),"app not fount",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override

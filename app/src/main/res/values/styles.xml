@@ -7,6 +7,7 @@
         <item name="colorAccent">@color/white</item>
     </style>
 
+    //ripple_color
     <style name="delete_account">
         <item name="rippleColor">@color/red_light</item>
     </style>
@@ -16,6 +17,7 @@
         <item name="strokeColor">@color/red_dark</item>
         <item name="rippleColor">@color/red_light</item>
     </style>
+
     //white_border
     <style name="white_border" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="strokeColor">@color/white</item>
