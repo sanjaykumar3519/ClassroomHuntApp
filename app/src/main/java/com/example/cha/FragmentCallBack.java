@@ -11,4 +11,5 @@ public interface FragmentCallBack {
     public void pop();
     public void setRoom(String r);
     public void setFloorRooms(String floor);
+    public void setProfileData(String[] data);
 }

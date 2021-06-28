@@ -45,6 +45,8 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     //setting room numbers
     String[] rMain;
     Rooms room;
+    //setting profile data
+    String[] profileData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         //room numbers
         rMain = new String[3];
         room = new Rooms();
+        profileData = new String[3];
         iniFragment();
     }
 
@@ -166,11 +169,23 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         }
     }
 
+    @Override
+    public void setProfileData(String[] data) {
+            System.arraycopy(data,0,this.profileData,0,data.length);
+            for(String i : this.profileData)
+            {
+                Log.i("main",i);
+            }
+    }
+
     //I defined functions
 
     public void iniFragment()
     {
+        sData = new Bundle();
+        sData.putString("username",holdUname.getString("username","none"));
         dashFragment = new DashFragment();
+        dashFragment.setArguments(sData);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.activity_frame,dashFragment,null);
         dashFragment.setFragmentCallBack(this);
@@ -234,7 +249,8 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         support.setVisibility(View.GONE);
         ProfileFragment profileFragment = new ProfileFragment();
         sData = new Bundle();
-        sData.putString("profileName",holdUname.getString("username","none"));
+        sData.putStringArray("profileData",profileData);
+        //sData.putString("profileName",holdUname.getString("username","none"));
         profileFragment.setArguments(sData);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.slide_in_right,0,R.anim.slide_in_left,R.anim.slide_out_right);

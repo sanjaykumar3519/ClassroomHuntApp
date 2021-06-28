@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
 public class ProfileFragment extends Fragment {
     TextView profileName,profileEmail,profileDept;
     FragmentCallBack fragmentCallBack;
-    String name;
+    String[] rData;
     Button delete;
     ProgressBar progressBar;
     public void setFragmentCallBack(FragmentCallBack fragmentCallBack) {
@@ -51,9 +51,10 @@ public class ProfileFragment extends Fragment {
         progressBar = v.findViewById(R.id.progress);
         Bundle bundle = getArguments();
         if (bundle != null) {
-            //profileName.setText(bundle.getString("profileName"));
-            name = bundle.getString("profileName");
-            setProfile(name);
+            rData = bundle.getStringArray("profileData");
+            profileName.setText(rData[0]);
+            profileEmail.setText(rData[1]);
+            profileDept.setText(rData[2]);
         }
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +63,7 @@ public class ProfileFragment extends Fragment {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        AccountDelete accountDelete = new AccountDelete(name);
+                        AccountDelete accountDelete = new AccountDelete(rData[0]);
                         if(accountDelete.onStart())
                         {
                             if(accountDelete.onComp())
@@ -82,25 +83,5 @@ public class ProfileFragment extends Fragment {
             }
         });
         return v;
-    }
-
-    public void setProfile(String username)
-    {
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                ProfileData profileData = new ProfileData(username);
-                if(profileData.onStart())
-                {
-                    if(profileData.onComp())
-                    {
-                        String[] readArray = profileData.readData.split(":");
-                        profileName.setText(readArray[0]);
-                        profileEmail.setText(readArray[1]);
-                        profileDept.setText(readArray[2].toUpperCase());
-                    }
-                }
-            }
-        });
     }
 }
