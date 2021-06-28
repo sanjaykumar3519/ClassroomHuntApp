@@ -73,7 +73,7 @@ public class LoginFragment extends Fragment {
                                         {
                                             Toast.makeText(getContext(),temp,Toast.LENGTH_SHORT).show();
                                             loginCallBack.setData(sData[0]);
-                                            loginCallBack.callBacks("intent");
+                                            loginCallBack.callBacks("main");
                                         }
                                     }
                                     else

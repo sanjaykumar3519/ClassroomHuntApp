@@ -7,8 +7,8 @@
         <item name="colorAccent">@color/white</item>
     </style>
 
-    <style name="red_border">
-        <item name="colorPrimary">@color/red_dark</item>
+    <style name="delete_account">
+        <item name="rippleColor">@color/red_light</item>
     </style>
 
     //red_border

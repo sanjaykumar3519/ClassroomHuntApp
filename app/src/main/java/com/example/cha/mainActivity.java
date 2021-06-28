@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,8 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     RoomsFragment roomsFragment;
     LoadingFragment loadingFragment;
     ResultFragment resultFragment;
-    TextView title,un,support;
+    TextView title,un;
+    RelativeLayout support;
     //for invisibility
     FrameLayout activityFrame;
     //for Result
@@ -229,6 +231,7 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     public void Profile()
     {
         un.setVisibility(View.INVISIBLE);
+        support.setVisibility(View.GONE);
         ProfileFragment profileFragment = new ProfileFragment();
         sData = new Bundle();
         sData.putString("profileName",holdUname.getString("username","none"));
@@ -236,13 +239,14 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.slide_in_right,0,R.anim.slide_in_left,R.anim.slide_out_right);
         fragmentTransaction.addToBackStack("frag_stack");
-        fragmentTransaction.replace(R.id.activity_frame,profileFragment,null);
+        fragmentTransaction.replace(R.id.activity_frame,profileFragment,"profile");
         profileFragment.setFragmentCallBack(this);
         fragmentTransaction.commit();
     }
 
     public void logout(){
         SplashScreen.ld.edit().putBoolean("login",false).apply();
+        holdUname.edit().putString("username","none").apply();
         startActivity(new Intent(this,LoginActivity.class));
         finish();
     }
@@ -273,6 +277,10 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
                 loadingFragment.revAnim();
                 UserInterrupt();
             }else if(fragmentManager.findFragmentByTag("result")!=null)  //setting username visibility
+            {
+                un.setVisibility(View.VISIBLE);
+                fragmentManager.popBackStack();
+            }else if(fragmentManager.findFragmentByTag("profile")!=null)
             {
                 un.setVisibility(View.VISIBLE);
                 fragmentManager.popBackStack();

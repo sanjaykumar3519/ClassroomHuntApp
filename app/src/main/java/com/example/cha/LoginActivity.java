@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     public void callBacks(String calls) {
         switch (calls)
         {
-            case "intent":mainIntent();break;
+            case "main":mainIntent();break;
             case "signup":signupFrag();break;
             case "forgot":forgotFrag();break;
             case "reset":resetFrag();break;

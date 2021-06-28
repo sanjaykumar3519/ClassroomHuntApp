@@ -45,17 +45,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/support"/>
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/support"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Support Us"
-        android:background="@drawable/layout_bg"
-        android:fontFamily="@font/ubuntu_bold_italic"
-        android:textSize="20sp"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:background="#f5f5f5"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@+id/activity_frame"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:id="@+id/text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Support US"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:textSize="23sp"
+            />
+        <Button
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="clashofsanjay@gmail.com"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/ubuntu_bold_italic"
+            android:background="#00000000" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
