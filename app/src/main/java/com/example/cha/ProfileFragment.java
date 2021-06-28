@@ -54,7 +54,7 @@ public class ProfileFragment extends Fragment {
             rData = bundle.getStringArray("profileData");
             profileName.setText(rData[0]);
             profileEmail.setText(rData[1]);
-            profileDept.setText(rData[2]);
+            profileDept.setText(rData[2].toUpperCase());
         }
         delete.setOnClickListener(new View.OnClickListener() {
             @Override

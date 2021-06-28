@@ -283,7 +283,6 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     public void Profile()
     {
         un.setVisibility(View.INVISIBLE);
-        support.setVisibility(View.GONE);
         ProfileFragment profileFragment = new ProfileFragment();
         sData = new Bundle();
         sData.putStringArray("profileData",profileData);
