@@ -270,7 +270,7 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         sData.putString("image",BitmapStr);
         resultFragment = new ResultFragment();
         resultFragment.setArguments(sData);
-        un.setVisibility(View.INVISIBLE);
+        un.setVisibility(View.GONE);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.slide_in_right,0,R.anim.slide_in_left,R.anim.slide_out_right);
         fragmentTransaction.replace(R.id.activity_frame,resultFragment,"result");

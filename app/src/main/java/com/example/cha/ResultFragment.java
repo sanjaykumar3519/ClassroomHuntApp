@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 public class ResultFragment extends Fragment {
 
-    TextView status,approx;
+    TextView status,rApprox,approx;
     ImageView imageView;
     FragmentCallBack fragmentCallBack;
     public void setFragmentCallBack(FragmentCallBack fragmentCallBack)
@@ -38,28 +40,39 @@ public class ResultFragment extends Fragment {
 
         //hooks
         status = v.findViewById(R.id.res_status);
-        approx = v.findViewById(R.id.res_approx);
+        rApprox = v.findViewById(R.id.res_approx);
+        approx = v.findViewById(R.id.approx);
         imageView = v.findViewById(R.id.Bitmap_result);
 
         //assigning values
         Bundle bundle = getArguments();
         if(bundle!=null)
         {
-            if(bundle.getString("students").equals("0") || bundle.getString("students").equals("none"))
+            if(!bundle.getString("students").equals("false"))
             {
-                status.setText(R.string.empty);
-                imageView.setVisibility(View.INVISIBLE);
+                if(bundle.getString("students").equals("0") || bundle.getString("students").equals("none"))
+                {
+                    status.setText(R.string.empty);
+                    imageView.setVisibility(View.INVISIBLE);
+                }
+                else
+                {
+                    status.setText(R.string.taken);
+                }
+                rApprox.setText(bundle.getString("students","none"));
+                String rString = bundle.getString("image");
+                //decode bitmap
+                byte[] decodeArray = Base64.decode(rString,Base64.DEFAULT);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(decodeArray,0,decodeArray.length);
+                imageView.setImageBitmap(bitmap);
             }
             else
             {
-                status.setText(R.string.taken);
+                imageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.not_found,null));
+                approx.setVisibility(View.GONE);
+                rApprox.setVisibility(View.GONE);
+                status.setText(getString(R.string.not_found));
             }
-            approx.setText(bundle.getString("students","none"));
-            String rString = bundle.getString("image");
-            //decode bitmap
-            byte[] decodeArray = Base64.decode(rString,Base64.DEFAULT);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(decodeArray,0,decodeArray.length);
-            imageView.setImageBitmap(bitmap);
         }
         return v;
     }

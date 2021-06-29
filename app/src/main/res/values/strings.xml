@@ -50,4 +50,5 @@
     <string name="enter_un">Enter Username</string>
     <string name="submit">Submit</string>
     <string name="back_to_login">Back to login page</string>
+    <string name="not_found">CCTV camera not installed in the selected room</string>
 </resources>
