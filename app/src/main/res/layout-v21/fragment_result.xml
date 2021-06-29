@@ -12,7 +12,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/result_layout"
-        android:layout_marginBottom="@dimen/b_1"/>
+        android:layout_marginBottom="@dimen/b_1"
+        android:contentDescription="@string/todo" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/result_layout"
         android:layout_width="0dp"
@@ -27,7 +28,7 @@
         android:id="@+id/status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="status"
+        android:text="@string/status"
         android:textSize="20sp"
         android:padding="10dp"
         android:textAlignment="center"
@@ -53,7 +54,7 @@
         android:id="@+id/approx"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Approx student"
+        android:text="@string/approx"
         android:textSize="20sp"
         android:padding="10dp"
         android:textAlignment="center"

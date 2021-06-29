@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -96,7 +95,7 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
             public void onClick(View v) {
                 try{
                 Intent i = new Intent(Intent.ACTION_SEND);
-                i.putExtra(Intent.EXTRA_EMAIL,"clashofsanjay@gmail.com");
+                i.putExtra(Intent.EXTRA_EMAIL,new String[]{"classroomhuntapp@gmail.com"});
                 i.setType("message/rfc822");
                 startActivity(Intent.createChooser(i,"Open using"));
                 }

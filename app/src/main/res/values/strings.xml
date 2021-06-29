@@ -31,4 +31,23 @@
     <string name="available">Available Rooms</string>
     <string name="room_title">Rooms</string>
     <string name="result_title">Result</string>
+    <string name="support">Support</string>
+    <string name="mail">Mail Us</string>
+    <string name="Hide">Hide</string>
+    <string name="detecting">Detecting</string>
+    <string name="fp">Forgot Password?</string>
+    <string name="go">Go</string>
+    <string name="un">Username </string>
+    <string name="email">Email </string>
+    <string name="dept">Department </string>
+    <string name="delete">Delete account</string>
+    <string name="new_user">new user?Signup</string>
+    <string name="enter_new_pass">Enter new password</string>
+    <string name="confirm_new_pass">Confirm new password</string>
+    <string name="status">Status</string>
+    <string name="approx">Approx student</string>
+    <string name="already">Already have an account?login</string>
+    <string name="enter_un">Enter Username</string>
+    <string name="submit">Submit</string>
+    <string name="back_to_login">Back to login page</string>
 </resources>

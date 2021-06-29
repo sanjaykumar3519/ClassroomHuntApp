@@ -13,7 +13,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/detecting"
-        android:src="@drawable/hunt_circle" />
+        android:src="@drawable/hunt_circle"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/load_inside"
@@ -23,12 +24,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/load_circle"
-        android:src="@drawable/hunt_inside" />
+        android:src="@drawable/hunt_inside"
+        android:contentDescription="@string/todo" />
     <TextView
         android:id="@+id/detecting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Detecting"
+        android:text="@string/detecting"
         android:textSize="40sp"
         android:fontFamily="@font/ubuntu_bold_italic"
         android:textColor="@color/red_dark"

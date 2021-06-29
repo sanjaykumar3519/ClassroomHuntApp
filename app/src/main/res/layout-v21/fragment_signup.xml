@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -30,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_un"
                 android:textCursorDrawable="@null"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -46,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_email"
                 android:textCursorDrawable="@null"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_dept"
                 android:textCursorDrawable="@null"
-                android:hint="Department"
+                android:hint="@string/dept"
                 android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -79,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_pass"
                 android:textCursorDrawable="@null"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +93,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="confirm password"
+                android:hint="@string/confirm_new_pass"
                 android:textCursorDrawable="@null"
                 android:id="@+id/input_cpass"
                 android:inputType="textPassword"/>
@@ -104,21 +103,20 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="signup"
+            android:text="@string/signup"
             style="@style/white_border"
             android:backgroundTint="@color/yellow"
             android:textColor="@color/white"
             android:id="@+id/sign_but"
             android:padding="12dp"
             android:layout_marginTop="10dp"
-            android:transitionName="login_trans"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="#00000000"
-            android:text="Already have an account?login"
+            android:text="@string/already"
             android:textColor="@color/yellow"
             android:textSize="12sp"
             android:id="@+id/already" />

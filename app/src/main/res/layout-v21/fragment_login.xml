@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -49,34 +50,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
-            android:text="Forgot Password?"
+            android:text="@string/fp"
             android:textColor="@color/blue_dark"
             android:textSize="10sp"
             android:elevation="0dp"
             android:layout_gravity="right"
             android:id="@+id/forgot"
-            android:transitionName="login_trans"/>
+            tools:ignore="RtlHardcoded,SmallSp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:padding="12dp"
-            android:text="go"
+            android:text="@string/go"
             style="@style/white_border"
             android:backgroundTint="@color/blue_dark"
-            android:transitionName="login_trans"
             android:id="@+id/login"/>
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#00000000"
-            android:text="new user?Signup"
+            android:text="@string/new_user"
             android:id="@+id/signup"
             android:textColor="@color/blue_dark"
             android:textSize="12sp"
-            android:transitionName="sign_trans"
             android:elevation="0dp"/>
     </LinearLayout>
     <ProgressBar

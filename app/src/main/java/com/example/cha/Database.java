@@ -1,7 +1,6 @@
 package com.example.cha;
 
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
@@ -42,7 +41,7 @@ public class Database extends Thread{
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void run()
     {
-        String res = null;
+        String res;
        try{
            URL url = new URL(this.url);
            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();

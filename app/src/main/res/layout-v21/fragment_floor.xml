@@ -25,7 +25,6 @@
             android:fontFamily="@font/ubuntu_bold_italic"
             android:textColor="@color/blue_dark"
             android:text="@string/gf"
-            android:transitionName="gf_trans"
             />
 
         <Button

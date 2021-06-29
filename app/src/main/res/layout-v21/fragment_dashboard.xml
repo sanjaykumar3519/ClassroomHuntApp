@@ -9,7 +9,6 @@
         android:orientation="vertical"
         android:padding="@dimen/b_1"
         android:layout_marginTop="10dp"
-        android:transitionName="ll"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,7 +23,6 @@
             android:textColor="@color/blue_dark"
             android:padding="@dimen/b_1"
             android:fontFamily="@font/ubuntu_bold_italic"
-            android:transitionName="floor_trans"
             android:layout_marginBottom="10dp"/>
 
         <Button
@@ -48,7 +46,6 @@
             android:text="@string/logout"
             android:textColor="@color/red_dark"
             android:fontFamily="@font/ubuntu_bold_italic"
-            android:transitionName="login_trans"
             android:layout_marginBottom="10dp"
             />
     </LinearLayout>

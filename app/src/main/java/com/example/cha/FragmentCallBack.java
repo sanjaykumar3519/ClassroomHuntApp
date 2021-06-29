@@ -3,13 +3,13 @@ package com.example.cha;
 import android.graphics.Bitmap;
 
 public interface FragmentCallBack {
-    public void callNextFrag(String fragments);
-    public void getTextView(String title);
-    public void setResultData(String result, Bitmap resImg);
-    public void hideActionBar(boolean flag);
-    public void exception(String e);
-    public void pop();
-    public void setRoom(String r);
-    public void setFloorRooms(String floor);
-    public void setProfileData(String[] data);
+    void callNextFrag(String fragments);
+    void getTextView(String title);
+    void setResultData(String result, Bitmap resImg);
+    void hideActionBar(boolean flag);
+    void exception(String e);
+    void pop();
+    void setRoom(String r);
+    void setFloorRooms(String floor);
+    void setProfileData(String[] data);
 }

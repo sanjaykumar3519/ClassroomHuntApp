@@ -21,31 +21,31 @@
             android:layout_width="220dp"
             android:layout_height="329dp"
             android:src="@drawable/hunt_circle_half"
-            android:transitionName="logo_trans"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/todo" />
         <ImageView
             android:id="@+id/logo_right"
             android:layout_width="220dp"
             android:layout_height="329dp"
             android:src="@drawable/hunt_circle_right"
-            android:transitionName="logo_trans"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/todo" />
         <ImageView
             android:id="@+id/logo_center"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:src="@drawable/hunt_inside"
-            android:transitionName="logo_trans"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/todo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,7 +58,6 @@
         android:gravity="center_horizontal"
         android:textColor="@color/black"
         android:textSize="50sp"
-        android:transitionName="text_trans"
         app:layout_constraintTop_toBottomOf="@+id/img_con"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -72,7 +71,6 @@
         android:gravity="center_horizontal"
         android:text="@string/a_class_tracking_management_system"
         android:textSize="16sp"
-        android:transitionName="text_trans"
         app:layout_constraintTop_toBottomOf="@+id/main_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
