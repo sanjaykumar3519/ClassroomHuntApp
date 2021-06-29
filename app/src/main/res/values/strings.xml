@@ -26,8 +26,10 @@
     <string name="check">Check</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
-    <string name="taken">Taken</string>
+    <string name="filled">filled</string>
+    <string name="filled_bit">filled a bit</string>
     <string name="empty">Empty</string>
+    <string name="empty_bit">Empty a bit</string>
     <string name="available">Available Rooms</string>
     <string name="room_title">Rooms</string>
     <string name="result_title">Result</string>

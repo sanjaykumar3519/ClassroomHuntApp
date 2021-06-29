@@ -55,9 +55,15 @@ public class ResultFragment extends Fragment {
                     status.setText(R.string.empty);
                     imageView.setVisibility(View.INVISIBLE);
                 }
-                else
+                else if(Integer.parseInt(bundle.getString("students"))<5)
                 {
-                    status.setText(R.string.taken);
+                    status.setText(R.string.empty_bit);
+                }else if(Integer.parseInt(bundle.getString("students"))<10)
+                {
+                    status.setText(R.string.filled_bit);
+                }else
+                {
+                    status.setText(R.string.filled);
                 }
                 rApprox.setText(bundle.getString("students","none"));
                 String rString = bundle.getString("image");
