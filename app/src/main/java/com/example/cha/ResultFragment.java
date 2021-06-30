@@ -7,6 +7,9 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +19,7 @@ import androidx.fragment.app.Fragment;
 public class ResultFragment extends Fragment {
 
     TextView status,rApprox,approx;
+    Button see;
     ImageView imageView;
     FragmentCallBack fragmentCallBack;
     public void setFragmentCallBack(FragmentCallBack fragmentCallBack)
@@ -43,6 +47,7 @@ public class ResultFragment extends Fragment {
         rApprox = v.findViewById(R.id.res_approx);
         approx = v.findViewById(R.id.approx);
         imageView = v.findViewById(R.id.Bitmap_result);
+        see = v.findViewById(R.id.see_img);
 
         //assigning values
         Bundle bundle = getArguments();
@@ -53,7 +58,8 @@ public class ResultFragment extends Fragment {
                 if(bundle.getString("students").equals("0") || bundle.getString("students").equals("none"))
                 {
                     status.setText(R.string.empty);
-                    imageView.setVisibility(View.INVISIBLE);
+                    imageView.setVisibility(View.GONE);
+                    see.setVisibility(View.GONE);
                 }
                 else if(Integer.parseInt(bundle.getString("students"))<5)
                 {
@@ -77,9 +83,32 @@ public class ResultFragment extends Fragment {
                 imageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.not_found,null));
                 approx.setVisibility(View.GONE);
                 rApprox.setVisibility(View.GONE);
+                imageView.setVisibility(View.VISIBLE);
+                see.setVisibility(View.GONE);
                 status.setText(getString(R.string.not_found));
             }
         }
+
+        see.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(imageView.getVisibility()==View.GONE)
+                {
+                    Animation top = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_top);
+                    imageView.setAnimation(top);
+                    //if GONE set to VISIBLE
+                    imageView.setVisibility(View.VISIBLE);
+                    see.setText(R.string.hide_img);
+                }
+                else
+                {
+                    Animation out = AnimationUtils.loadAnimation(requireContext(),R.anim.slide_out_top);
+                    imageView.setAnimation(out);
+                    imageView.setVisibility(View.GONE);
+                    see.setText(R.string.show_img);
+                }
+            }
+        });
         return v;
     }
 }
