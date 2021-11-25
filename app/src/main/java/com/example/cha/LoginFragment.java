@@ -49,12 +49,15 @@ public class LoginFragment extends Fragment {
             sField[1] = "password";
             sData[0] = String.valueOf(username.getText());
             sData[1] = String.valueOf(password.getText());
+            //setting server address
+            StringBuilder link = new StringBuilder();
+            link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/test.php");
             if(!sData[0].isEmpty() && !sData[1].isEmpty())
             {
                 //login task
                 Handler handler = new Handler(Looper.getMainLooper());
                 handler.post(() -> {
-                    Database database = new Database("http://192.168.1.37/hunt/Login.php", sField, sData);
+                    Database database = new Database(String.valueOf(link), sField, sData);
                     if(database.onStart())
                     {
                         if(database.onComp())

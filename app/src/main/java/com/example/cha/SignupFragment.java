@@ -61,13 +61,15 @@ public class SignupFragment extends Fragment {
                     sField[1] = "email";
                     sField[2] = "department";
                     sField[3] = "password";
-
+                    //setting server address
+                    StringBuilder link = new StringBuilder();
+                    link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Signup.php");
                     //sending data to Database
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            Database database = new Database("http://192.168.1.37/hunt/Signup.php", sField, sData);
+                            Database database = new Database(String.valueOf(link), sField, sData);
                             if (database.onStart()) {
                                 if (database.onComp()) {
                                     String temp = database.getData();

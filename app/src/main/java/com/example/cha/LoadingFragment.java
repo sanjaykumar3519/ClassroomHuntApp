@@ -65,6 +65,12 @@ public class LoadingFragment extends Fragment {
         if (bundle != null) {
             rNum = bundle.getString("rNumber");
         }
+        //setting server address1
+        StringBuilder link = new StringBuilder();
+        link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Detection/python.php");
+        //setting server address2
+        StringBuilder link1 = new StringBuilder();
+        link1.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Detection/000.jpeg");
 
         executorService.execute(new Runnable() {
             boolean flag = false;
@@ -72,7 +78,7 @@ public class LoadingFragment extends Fragment {
             @Override
             public void run() {
 
-                if(detection("http://192.168.1.37/hunt/Detection/Python.php", "http://192.168.1.37/hunt/Detection/000.jpeg",rNum))
+                if(detection(String.valueOf(link), String.valueOf(link1),rNum))
                 {
                     if (fragmentCallBack != null) {
                         fragmentCallBack.setResultData(result, resImg);

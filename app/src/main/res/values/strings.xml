@@ -55,4 +55,8 @@
     <string name="not_found">CCTV camera not installed in the selected room</string>
     <string name="show_img">see image</string>
     <string name="hide_img">Hide image</string>
+    <string name="ip_pop">Enter IP address</string>
+    <string name="chg_ip">Change IP</string>
+    <string name="ent_ip">Enter IP</string>
+    <string name="ok">ok</string>
 </resources>

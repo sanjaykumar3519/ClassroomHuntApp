@@ -57,10 +57,13 @@ public class ForPassFragment extends Fragment {
         String sField = "check_user";
         if(!sData.isEmpty())
         {
+            //setting server address
+            StringBuilder link = new StringBuilder();
+            link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/fp.php");
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override
                 public void run() {
-                    Database database = new Database("http://192.168.1.37/hunt/fp.php",sField,sData);
+                    Database database = new Database(String.valueOf(link),sField,sData);
                     if(database.onStart())
                     {
                         if(database.onComp())

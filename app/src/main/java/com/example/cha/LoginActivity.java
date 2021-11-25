@@ -6,11 +6,29 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.zip.Inflater;
 
 public class LoginActivity extends AppCompatActivity implements LoginCallBack{
 
@@ -18,16 +36,27 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     String userName;
     Bundle sData;
     TextView title,welcome;
+    //ip image
+    static SharedPreferences ip_data;
+    ImageView ip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         welcome = findViewById(R.id.welcome);
+        //ip address changer
+        ip = findViewById(R.id.ip_menu);
+        ip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPop(view);
+            }
+        });
+        ip_data = getSharedPreferences("ip",MODE_PRIVATE);
+
+        //fragment initialization
         initFrag();
-
     }
-
     private void initFrag()
     {
         LoginFragment loginFragment = new LoginFragment();
@@ -131,6 +160,37 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         fragmentTransaction.replace(R.id.login_frame,resetFragment,null);
         resetFragment.setLoginCallBack(this);
         fragmentTransaction.commit();
+    }
+    //ip change menu inflate
+    public void showPop(View v)
+    {
+        LayoutInflater layoutInflater = (LayoutInflater) v.getContext().getSystemService(v.getContext().LAYOUT_INFLATER_SERVICE);
+        View popWin = layoutInflater.inflate(R.layout.ip_pop,null);
+        int w = 700;
+        int h = 600;
+        PopupWindow popupWindow = new PopupWindow(popWin,w,h,true);
+        popupWindow.showAtLocation(v,Gravity.CENTER,0,0);
+        Button b = popWin.findViewById(R.id.ip_but);
+        TextInputEditText ip_in = popWin.findViewById(R.id.ip_add);
+        //onlcik
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String s = String.valueOf(ip_in.getText());
+                if(!s.isEmpty())
+                    ip_data.edit().putString("ip",s).apply();
+                Toast.makeText(getApplicationContext(),"IP address changed",Toast.LENGTH_SHORT).show();
+                popupWindow.dismiss();
+            }
+        });
+        //dismiss
+        popWin.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                popupWindow.dismiss();
+                return true;
+            }
+        });
     }
 
     public void onBackPressed()

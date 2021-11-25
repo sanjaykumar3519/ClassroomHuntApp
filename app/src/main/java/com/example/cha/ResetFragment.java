@@ -66,11 +66,14 @@ public class ResetFragment extends Fragment {
     public void onClickReset() {
         sData[1] = String.valueOf(pass.getText());
         password = String.valueOf(cPass.getText());
+        //setting server address
+        StringBuilder link = new StringBuilder();
+        link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/fp.php");
         if (checkValid()) {
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override
                 public void run() {
-                    Database database = new Database("http://192.168.1.37/hunt/fp.php", sField, sData);
+                    Database database = new Database(String.valueOf(link), sField, sData);
                     if (database.onStart()) {
                         if (database.onComp()) {
                             String temp = database.getData();

@@ -20,8 +20,11 @@ public class ProfileData extends Thread{
     }
     public void run()
     {
+        //setting server address
+        StringBuilder link = new StringBuilder();
+        link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/profile.php");
         try {
-            URL url = new URL("http://192.168.1.37/hunt/profile.php");
+            URL url = new URL(String.valueOf(link));
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoInput(true);
