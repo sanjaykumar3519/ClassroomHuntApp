@@ -51,7 +51,7 @@ public class LoginFragment extends Fragment {
             sData[1] = String.valueOf(password.getText());
             //setting server address
             StringBuilder link = new StringBuilder();
-            link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/test.php");
+            link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Login.php");
             if(!sData[0].isEmpty() && !sData[1].isEmpty())
             {
                 //login task
