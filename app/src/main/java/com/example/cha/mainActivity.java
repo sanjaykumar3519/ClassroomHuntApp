@@ -178,9 +178,15 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     }
 
     @Override
-    public void setResultData(String result,Bitmap img) {
-        rResult = result;
-        BitmapStr = encodeBitmap(img);
+    public void setResultData(String result,Bitmap img,boolean imgF) {
+        if(result!=null)
+            rResult = result;
+        else
+            rResult = "error";
+        if(!imgF)
+            BitmapStr = encodeBitmap(img);
+        else
+            BitmapStr = "error";
     }
 
     @Override
@@ -193,12 +199,6 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
     }
-
-    @Override
-    public void exception(String e) {
-        Log.i("exception",e);
-    }
-
     @Override
     public void pop() {
         getSupportFragmentManager().popBackStack();

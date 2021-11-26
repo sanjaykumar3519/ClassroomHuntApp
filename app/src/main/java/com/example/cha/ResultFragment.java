@@ -53,7 +53,7 @@ public class ResultFragment extends Fragment {
         Bundle bundle = getArguments();
         if(bundle!=null)
         {
-            if(!bundle.getString("students").equals("error"))
+            if(!bundle.getString("students").equals("error") && !bundle.getString("image").equals("error"))
             {
                 if(bundle.getString("students").equals("0") || bundle.getString("students").equals("none"))
                 {

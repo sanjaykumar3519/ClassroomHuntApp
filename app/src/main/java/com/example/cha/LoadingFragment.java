@@ -38,6 +38,7 @@ public class LoadingFragment extends Fragment {
     //result data
     String result = null;
     Bitmap resImg = null;
+    boolean imgF = false;
     //asyncRes task;
     ExecutorService executorService;
     public void setFragmentCallBack(FragmentCallBack fragmentCallBack) {
@@ -81,7 +82,7 @@ public class LoadingFragment extends Fragment {
                 if(detection(String.valueOf(link), String.valueOf(link1),rNum))
                 {
                     if (fragmentCallBack != null) {
-                        fragmentCallBack.setResultData(result, resImg);
+                        fragmentCallBack.setResultData(result, resImg, imgF);
                         flag = true;
                     }
                 }
@@ -126,7 +127,6 @@ public class LoadingFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public boolean detection(String resUrl, String bitUrl,String roomNum) {
-        boolean success = false;
         try {
             URL url = new URL(resUrl);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -150,15 +150,10 @@ public class LoadingFragment extends Fragment {
             bufferedReader.close();
             inputStream.close();
             httpURLConnection.disconnect();
-
-            //if try block is success
-            success = true;
         } catch (IOException e) {
-            if (fragmentCallBack != null) {
-                fragmentCallBack.exception(e.toString());
-            }
+            imgF = true;
         }
-        return success;
+        return true;
     }
 
 }
