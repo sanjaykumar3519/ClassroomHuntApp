@@ -23,8 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
-            app:boxStrokeColor="@color/green_dark"
-            app:hintTextColor="@color/green_dark"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -38,9 +38,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:hintTextColor="@color/green_dark"
+            app:hintTextColor="@color/blue_dark"
             app:passwordToggleEnabled="true"
-            app:boxStrokeColor="@color/green_dark"
+            app:boxStrokeColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/white_border"
-            android:backgroundTint="@color/green_dark"
+            android:backgroundTint="@color/blue_dark"
             android:textColor="@color/white"
             android:padding="12dp"
             android:text="@string/reset"
@@ -66,7 +66,7 @@
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/green_dark"
+        android:backgroundTint="@color/blue_dark"
         android:background="@drawable/progress_bg"
         android:elevation="@dimen/b_1"
         android:visibility="gone"

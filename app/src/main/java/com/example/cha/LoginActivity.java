@@ -8,27 +8,20 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.zip.Inflater;
 
 public class LoginActivity extends AppCompatActivity implements LoginCallBack{
 
@@ -95,23 +88,19 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
         {
             case "login": title.setText(t.append(getResources().getString(R.string.login)).append(" "));
                         title.setAnimation(alpha);
-                        title.setBackground(getDrawable(R.drawable.login_bg));
-                        welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.blue_dark));
+                        title.setBackground(getDrawable(R.drawable.title2_bg));
                         break;
             case "signUp":title.setText(t.append(getResources().getString(R.string.signup)).append(" "));
                             title.setAnimation(alpha);
-                            title.setBackground(getDrawable(R.drawable.signup_bg));
-                            welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.yellow));
+                            title.setBackground(getDrawable(R.drawable.title2_bg));
                             break;
             case "Forgot":title.setText(t.append(getResources().getString(R.string.forgot)).append(" "));
                             title.setAnimation(alpha);
-                            title.setBackground(getDrawable(R.drawable.forgot_bg));
-                             welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.red_dark));
+                            title.setBackground(getDrawable(R.drawable.title2_bg));
                 break;
             case "reset":title.setText(t.append(getResources().getString(R.string.reset)).append(" "));
                         title.setAnimation(alpha);
-                        title.setBackground(getDrawable(R.drawable.reset_bg));
-                        welcome.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.green_dark));
+                        title.setBackground(getDrawable(R.drawable.title2_bg));
                 break;
         }
     }

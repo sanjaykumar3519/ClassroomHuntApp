@@ -20,8 +20,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/yellow"
-            app:hintTextColor="@color/yellow"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -36,8 +36,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/yellow"
-            app:hintTextColor="@color/yellow"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -52,8 +52,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/yellow"
-            app:hintTextColor="@color/yellow"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -68,8 +68,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/yellow"
-            app:hintTextColor="@color/yellow"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:passwordToggleEnabled="true"
             >
@@ -85,8 +85,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/yellow"
-            app:hintTextColor="@color/yellow"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:passwordToggleEnabled="true"
             >
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:text="@string/signup"
             style="@style/white_border"
-            android:backgroundTint="@color/yellow"
+            android:backgroundTint="@color/blue_dark"
             android:textColor="@color/white"
             android:id="@+id/sign_but"
             android:padding="12dp"
@@ -117,7 +117,7 @@
             android:layout_gravity="center"
             android:background="#00000000"
             android:text="@string/already"
-            android:textColor="@color/yellow"
+            android:textColor="@color/blue_dark"
             android:textSize="12sp"
             android:id="@+id/already" />
     </LinearLayout>
@@ -125,7 +125,7 @@
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/blue_dark"
         android:background="@drawable/progress_bg"
         android:elevation="@dimen/b_1"
         android:visibility="gone"

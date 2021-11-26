@@ -42,7 +42,7 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     String setName = null;
     SharedPreferences holdUname;
     //setting Animation to username
-    Animation unAnimation,titleAnimation;
+    Animation unAnimation,titleAnimation,toBot,toTop;
     String roomNumber;
     //setting room numbers
     String[] rMain;
@@ -51,7 +51,8 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
     String[] profileData;
     //hide
     Button hide;
-    Animation alp;
+    //undo
+    ImageView undo;
     //open mail
     ImageView mail;
     @Override
@@ -63,16 +64,30 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         support = findViewById(R.id.support);
         hide = findViewById(R.id.hide);
         mail = findViewById(R.id.mail_img);
+        undo = findViewById(R.id.undo);
         if(support.getVisibility() == View.GONE)
         {
             support.setVisibility(View.VISIBLE);
         }
-        alp = AnimationUtils.loadAnimation(this,R.anim.alp_1s);
+        //hiding support tab
         hide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                support.setAnimation(alp);
+                toBot = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.to_bot);
+                support.setAnimation(toBot);
                 support.setVisibility(View.GONE);
+                undo.setVisibility(View.VISIBLE);
+            }
+        });
+        //undoing support
+        undo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                toTop = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.to_top);
+                undo.setVisibility(View.GONE);
+                support.setVisibility(View.VISIBLE);
+                support.setAnimation(toTop);
             }
         });
         //shared preference

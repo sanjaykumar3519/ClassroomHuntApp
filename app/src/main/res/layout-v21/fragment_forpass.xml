@@ -23,8 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fp_ue"
-            app:boxStrokeColor="@color/red_dark"
-            app:hintTextColor="@color/red_dark"
+            app:boxStrokeColor="@color/blue_dark"
+            app:hintTextColor="@color/blue_dark"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/white_border"
-            android:backgroundTint="@color/red_dark"
+            android:backgroundTint="@color/blue_dark"
             android:textColor="@color/white"
             android:text="@string/submit"
             android:padding="12dp"
@@ -54,7 +54,7 @@
             android:background="#00000000"
             android:text="@string/back_to_login"
             android:id="@+id/fp_login"
-            android:textColor="@color/red_dark"
+            android:textColor="@color/blue_dark"
             android:textSize="12sp"
             android:layout_marginTop="5dp"
             android:elevation="0dp"/>
@@ -64,7 +64,7 @@
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red_dark"
+        android:backgroundTint="@color/blue_dark"
         android:background="@drawable/progress_bg"
         android:elevation="@dimen/b_1"
         android:visibility="gone"
