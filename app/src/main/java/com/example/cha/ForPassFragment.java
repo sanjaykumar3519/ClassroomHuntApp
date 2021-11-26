@@ -59,7 +59,7 @@ public class ForPassFragment extends Fragment {
         {
             //setting server address
             StringBuilder link = new StringBuilder();
-            link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/fp.php");
+            link.append("http://").append(SplashScreen.ip.getString("ip","none")).append("/hunt/fp.php");
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override
                 public void run() {

@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     Bundle sData;
     TextView title,welcome;
     //ip image
-    static SharedPreferences ip_data;
     ImageView ip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,6 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
                 showPop(view);
             }
         });
-        ip_data = getSharedPreferences("ip",MODE_PRIVATE);
-
         //fragment initialization
         initFrag();
     }
@@ -113,7 +110,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
     public void mainIntent()
     {
         SplashScreen.ld.edit().putBoolean("login",true).apply();
-        startActivity(new Intent(this,mainActivity.class).putExtra("getUsername",this.userName));
+        startActivity(new Intent(this,mainActivity.class).putExtra("username",this.userName));
         finish();
     }
     public void signupFrag()
@@ -167,7 +164,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallBack{
             public void onClick(View view) {
                 String s = String.valueOf(ip_in.getText());
                 if(!s.isEmpty())
-                    ip_data.edit().putString("ip",s).apply();
+                    SplashScreen.ip.edit().putString("ip",s).apply();
                 Toast.makeText(getApplicationContext(),"IP address changed",Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
             }

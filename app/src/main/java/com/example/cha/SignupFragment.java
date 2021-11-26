@@ -64,7 +64,7 @@ public class SignupFragment extends Fragment {
                     sField[3] = "password";
                     //setting server address
                     StringBuilder link = new StringBuilder();
-                    link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Signup.php");
+                    link.append("http://").append(SplashScreen.ip.getString("ip","none")).append("/hunt/Signup.php");
                     //sending data to Database
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {

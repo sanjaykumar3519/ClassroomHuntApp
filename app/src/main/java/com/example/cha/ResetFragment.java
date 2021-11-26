@@ -68,7 +68,7 @@ public class ResetFragment extends Fragment {
         password = String.valueOf(cPass.getText());
         //setting server address
         StringBuilder link = new StringBuilder();
-        link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/fp.php");
+        link.append("http://").append(SplashScreen.ip.getString("ip","none")).append("/hunt/fp.php");
         if (checkValid()) {
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override

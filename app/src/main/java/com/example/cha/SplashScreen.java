@@ -17,7 +17,7 @@ public class SplashScreen extends AppCompatActivity {
 
     TextView t_logo,t_slogan;
     Animation bot;
-    static SharedPreferences ld;
+    static SharedPreferences ld,ip;
 
     final int SPLASH = 3000;
     @Override
@@ -48,7 +48,7 @@ public class SplashScreen extends AppCompatActivity {
 
         //sharedPref login or dashboard
         ld = getSharedPreferences("login",MODE_PRIVATE);
-
+        ip = getSharedPreferences("ip",MODE_PRIVATE);
 
         new Handler().postDelayed(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

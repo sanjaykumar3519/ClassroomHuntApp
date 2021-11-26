@@ -95,7 +95,7 @@ public class mainActivity extends AppCompatActivity implements FragmentCallBack{
         //set Username
         if(holdUname.getString("username","none").equals("none"))
         {
-            setName = getIntent().getStringExtra("getUsername");
+            setName = getIntent().getStringExtra("username");
             holdUname.edit().putString("username",setName).apply();
         }
         //room numbers

@@ -68,10 +68,10 @@ public class LoadingFragment extends Fragment {
         }
         //setting server address1
         StringBuilder link = new StringBuilder();
-        link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Detection/python.php");
+        link.append("http://").append(SplashScreen.ip.getString("ip","none")).append("/hunt/Detection/python.php");
         //setting server address2
         StringBuilder link1 = new StringBuilder();
-        link1.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/Detection/000.jpeg");
+        link1.append("http://").append(SplashScreen.ip.getString("ip","none")).append("/hunt/Detection/000.jpeg");
 
         executorService.execute(new Runnable() {
             boolean flag = false;

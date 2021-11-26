@@ -21,7 +21,7 @@ public class AccountDelete extends Thread{
     {
         //setting server address
         StringBuilder link = new StringBuilder();
-        link.append("http://").append(LoginActivity.ip_data.getString("ip","none")).append("/hunt/profile.php");
+        link.append("http://").append(SplashScreen.ip.getString("ip","none")).append("/hunt/profile.php");
         try {
             URL url = new URL(String.valueOf(link));
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
