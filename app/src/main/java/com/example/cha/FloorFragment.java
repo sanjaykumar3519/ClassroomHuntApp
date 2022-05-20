@@ -15,6 +15,7 @@ public class FloorFragment extends Fragment{
     {
         this.fragmentCallBack = fragmentCallBack;
     }
+//testing
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_floor,container,false);
